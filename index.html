@@ -349,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/learnVue/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/myVue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="billazheng">
@@ -368,7 +368,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/08/learnVue/" itemprop="url">Vue原理解析</a></h1>
+                <a class="post-title-link" href="/2018/04/08/myVue/" itemprop="url">试着实现一个Vue</a></h1>
         
 
         <div class="post-meta">
@@ -420,7 +420,81 @@
       
         
           
-            <p>接触Vue快一年了</p>
+            <p>接触Vue快一年了，也大致了解其中的相关原理，下面参考网上的一些资料，试着实现一个自己的VUE</p>
+<p>首先是视图，因为在大型应用中，为了控制数据的逻辑操作，数据与展现必须分离，不像JQuery，数据与展现牢牢绑定在一起，当你更新某一部分视图时，必须把数据和视图都重新更新一遍，但其实在大多数应用里，对数据的操作是最多的。<br>按照MV*框架的设计理念，视图是其中的View层，源代码是需要进行编译的模板，编译后是真正浏览器解析的代码，假设有如下模板：</p>
+<p><div>  </div><br>那么在script中我们是这样定义的：<br>var message = ‘I am Ovan’</p>
+<p>如何把模板渲染出来呢，很简单，一个正则就匹配出来了，但是这样只能渲染这一个变量，假设一个页面用了很多数据，那就要建很多message这种变量，一方面渲染效率就降低了，不能像直接设置innerHTML那样直接更新整个页面，另一方面这么多变量维护起来也不容易。我们可以把一个页面或一个component需要的数据放在一个对象里面，也就是：<br>var data = {<br>  message: ‘I am Ovan’<br>}<br>渲染的时候只渲染data.message</p>
+<p>但是怎么做到当data.message改变的时候，div里面的message也跟着改变呢（怎么实现MVVM）？<br>三种思路：<br>①发布者/订阅者模式：<br>当设置data.message的值时 -&gt; 发布了一个change事件，文档上进行监听，所有绑定data.message的元素进行数据变化的回调，即调用数据变化后的callback，类源代码如下：</p>
+<p>function DataBinder(object_id){<br>    //创建一个简单地PubSub对象   </p>
+<pre><code>var pubSub = {
+    callbacks: {}.
+
+    on: function(msg,calssback){
+        this.callbacks[msg] = this.callbacks[msg] || [];
+        this.callbacks[msg].push(callback);
+    },
+
+    publish: function(msg){
+        this.callbacks[msg] = this.callbacks[msg] || [];
+        for(var i = 0, len = this.callbacks[msg].length; i&lt;lenli++){
+            this.callbacks[msg][i].apply(this,arguments);
+        }
+    }
+},
+
+data_attr = &quot;data-bind-&quot; + object_id,
+message = object_id + &quot;:change&quot;,
+
+changeHandler = function(evt){
+    var target = evt.target || evt.srcElemnt, //IE8兼容
+        prop_name = target.getAttribute(data_attr);
+
+        if(prop_name &amp;&amp; prop_name !== &quot;&quot;){
+            pubSub.publish(message,prop_name,target.value);
+        }
+};
+
+//监听变化事件并代理到PubSub
+if(document.addEventListener){
+    document.addEventListener(&quot;change&quot;,changeHandler,false);
+}else{
+    //IE8使用attachEvent而不是addEventListener     
+    document.attachEvent(&quot;onchange&quot;,changeHandler);
+}
+
+//PubSub将变化传播到所有绑定元素    
+
+pubSub.on(message,function(vet,prop_name,new_val){
+    var elements = document.querySelectorAll(&quot;[&quot; + data_attr + &quot;=&quot; + prop_name + &quot;]&quot;),
+            tah_name;
+
+    for(var i = 0,len =elements.length; i &lt; len; i++){
+        tag_name = elements[i].tagName.toLowerCase();
+
+        if(tag_name === &quot;input&quot; || tag_name === &quot;textarea&quot; || tag_name === &quot;select&quot;){
+        elements[i].value = new_val;
+        }else{
+            elements[i].innerHTML = new_val;
+        }
+    }
+});
+
+return pubSub;
+</code></pre><p>}</p>
+<p>模型它需要通过调用一个自定义的PubSub的publish方法来实现：</p>
+<p>//在model的设置器中   </p>
+<p>function User(uid){<br>var binder = new DataBinder(uid);</p>
+<p>user = {<br>attributes: {},<br>set: function(attr_name,val){<br>    this.attribute[attr_name] = val;<br>    //使用“publish”方法<br>    binder.publish(uid+ “:change”, attr_name, val,this);<br>        }<br>    }</p>
+<pre><code>get: function(attr_name) {
+  return this.attribute[attr_name]
+}
+</code></pre><p>}        </p>
+<p>new user(‘aaa’).set(‘message’, ‘I am Ovan’)</p>
+<input type="“text”" data-bind-aaa="message">
+
+<p>②脏值检查，监测变量是否发生变化，angular1.0的思路是当指定事件发生时进行检查，如DOM变化事件，XHR响应事件，Timer事件</p>
+<p>③数据劫持结合发布订阅者模式，劫持每个数据属性的setter,getter，当数据变动时，发布信息给订阅者，触发响应的回调</p>
+<p>vue利用浏览器拥有的Object.defineProperty()劫持属性。所以要模拟vue，需要实现以下几个方面的功能：<br>1.实现一个数据observer, 对数据对象的所有属性进行监听，有变动则发布消息给订阅者<br>2.编译模板，对每个元素绑定的数据进行解析<br>3.实现一个watcher，当收到通知时，执行指令绑定的响应回调函数</p>
 
           
         
