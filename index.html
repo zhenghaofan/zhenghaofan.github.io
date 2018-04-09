@@ -239,6 +239,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/09/think-in-jQuery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="billazheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello! I'm Ovan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/09/think-in-jQuery/" itemprop="url">think in jQuery</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-09T11:05:05+08:00">
+                2018-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/frontend/" itemprop="url" rel="index">
+                    <span itemprop="name">frontend</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>  Sizzle引擎是jQuery的核心组成部分，它是一款纯 JavaScript 实现的 CSS 选择器引擎，兼容低版本IE浏览器。</p>
+<p>  新浏览器支持W3C标准中的selector API, 就是querySelector(), querySelectorAll();IE低版本不支持这两个方法，Sizzle通过JS模拟这两个方法的实现</p>
+<p>  使用 jQuery 开发时，大多数时候，总是先调用 Sizzle 查找元素，然后调用 jQuery 方法对查找结果进行操作。</p>
+<p>  分析 Sizzle 的源码实现之前，先来讨论和分析下如果要执行一段选择器表达式，或者说设计一个简化版的选择器引擎，需要做些什么工作。下面以 “div.red&gt;p” 为例来模拟执行过程，具体来说有从左向右查找和从右向左查找两种思路:</p>
+<p>  1)从左向右:先查找 “div.red” 匹配的元素集合，然后查找匹配 “p” 的子元素集合。<br>  2)从右向左:先查找 “p” 匹配的元素集合，然后检查其中每个元素的父元素是否匹配 “div.red”。<br>  无论是从左向右还是从右向左，都必须经历下面 3 个步骤:<br>  1)首先要能正确地解析出 “div.red&gt;p” 中的 “div.red”、”p” 和 “&gt;”，即解析出选择器 表达式中的块表达式和块间关系符。这一步是必需的，否则根本无从下手。<br>  2)然后要能正确地找到与 “div.red” 或 “p” 匹配的元素集合，即查找单个块表达式的匹 配元素集合。以 “div.red” 为例，可以有两种实现方式:<br>  a. 先查找匹配 “div” 的元素集合，然后从中过滤出匹配 “.red” 的元素集合。<br>  b. 先查找匹配 “.red” 的元素集合，然后从中过滤出匹配 “div” 的元素集合。</p>
+<p>  不管采用以上哪种方式，这个过程都可以分解为两个步骤:<br>  第一步用块表达式的一部分进行查找，<br>  第二步用块表达式的剩余部分对查找的结果进行过滤。</p>
+<p>  3)最后来处理 “div.red” 和 “p” 之间的关系符 “&gt;”，即处理块表达式之间的父子关系。<br>  在这一步骤中，从左向右和从右向左的处理方式是截然不同的:<br>  a. 从左向右:找到 “div.red” 匹配的元素集合的子元素集合，然后从中过滤出匹配 “p”<br>  的子元素集合。<br>  b. 从右向左:检查每个匹配 “p” 的元素的父元素是否匹配 “div.red”，只保留匹配的元素。<br>  无论采用以上哪种方式，这个过程都可以分解为两个步骤:<br>  第一步按照块间关系符查找元素，<br>  第二步用块表达式对查找的结果进行过滤。<br>  不论元素之间是哪种关系(父子关系、祖 先后代关系、相邻的兄弟关系或不相邻的兄弟关系)，都可以采用这种方式来查找和过滤。<br>  另外，如果还有更多的块表达式，则重复执行第 3 步。<br>  对于前面的 3 个步骤，可以进一步提炼总结，如下:<br>  1)处理选择器表达式:解析选择器表达式中的块表达式和块间关系符。<br>  2)处理块表达式:用块表达式的一部分查找，用剩余部分对查找结果进行过滤。<br>  3)处理块间关系符:按照块间关系符查找，用块表达式对查找结果进行过滤。<br>  从前面对选择器表达式的执行过程的分析，还可以推导分析出以下结论: <br>  从左向右的总体思路是不断缩小上下文，即不断缩小查找范围。 <br>  从右向左的总体思路是先查找后过滤。 </p>
+<p>  在从左向右的查找过程中，每次处理块间关系符时都需要处理未知数量的子元素或后代元素，而在从右向左的查找过程中，处理块间关系符时只需要处理单个父元素或有 限数量的祖先元素。因此，在大多数情况下，采用从右向左的查找方式其效果要高于 从左向右。<br>  在了解了两种执行思路后，现在再来看看 Sizzle，它是一款从右向左查找的选择器引擎。</p>
+<p>  函数 Sizzle( selector, context, results, seed ) 执行的 6 个关键步骤如下:<br>  1)解析块表达式和块间关系符。<br>  2)如果存在位置伪类，则从左向右查找:<br>  a. 查找第一个块表达式匹配的元素集合，得到第一个上下文元素集合。<br>  b. 遍历剩余的块表达式和块间关系符，不断缩小上下文元素集合。<br>  3)否则从右向左查找:<br>  a. 查找最后一个块表达式匹配的元素集合，得到候选集、映射集。<br>  b. 遍历剩余的块表达式和块间关系符，对映射集执行块间关系过滤。<br>  4)根据映射集筛选候选集，将最终匹配的元素放入结果集。<br>  5)如果存在并列选择器表达式，则递归调用 Sizzle( selector, context, results, seed ) 查找<br>  匹配的元素集合，并合并、排序、去重。<br>  6)最后返回结果集。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/09/the-path-of-growth/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -870,7 +1020,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
