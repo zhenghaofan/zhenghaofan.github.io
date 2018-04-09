@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="常见的MVVM框架有Vue,Angular…">
+<meta name="description" content="常见的MVVM框架有Vue,Angular… MVVM 就是将其中的View 的状态和行为抽象化，让我们将视图 UI 和业务逻辑分开。 MVVM 模式便是使用的是数据绑定基础架构。它们可以轻松构建UI的必要元素。 View绑定到ViewModel，通过view对外暴露出公共属性，然后执行一些命令在向它请求一个动作。而反过来，ViewModel跟Model通讯，告诉它更新来响应UI。这样便使得为应">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MVVM框架原理">
 <meta property="og:url" content="http://yoursite.com/2018/04/08/mvvm/index.html">
 <meta property="og:site_name" content="Hello! I&#39;m Ovan">
-<meta property="og:description" content="常见的MVVM框架有Vue,Angular…">
+<meta property="og:description" content="常见的MVVM框架有Vue,Angular… MVVM 就是将其中的View 的状态和行为抽象化，让我们将视图 UI 和业务逻辑分开。 MVVM 模式便是使用的是数据绑定基础架构。它们可以轻松构建UI的必要元素。 View绑定到ViewModel，通过view对外暴露出公共属性，然后执行一些命令在向它请求一个动作。而反过来，ViewModel跟Model通讯，告诉它更新来响应UI。这样便使得为应">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-08T08:24:20.000Z">
+<meta property="og:updated_time" content="2018-04-09T02:21:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVVM框架原理">
-<meta name="twitter:description" content="常见的MVVM框架有Vue,Angular…">
+<meta name="twitter:description" content="常见的MVVM框架有Vue,Angular… MVVM 就是将其中的View 的状态和行为抽象化，让我们将视图 UI 和业务逻辑分开。 MVVM 模式便是使用的是数据绑定基础架构。它们可以轻松构建UI的必要元素。 View绑定到ViewModel，通过view对外暴露出公共属性，然后执行一些命令在向它请求一个动作。而反过来，ViewModel跟Model通讯，告诉它更新来响应UI。这样便使得为应">
 
 
 
@@ -300,6 +300,22 @@
 
       
         <p>常见的MVVM框架有Vue,Angular…</p>
+<p>MVVM 就是将其中的View 的状态和行为抽象化，让我们将视图 UI 和业务逻辑分开。</p>
+<p>MVVM 模式便是使用的是数据绑定基础架构。它们可以轻松构建UI的必要元素。</p>
+<p>View绑定到ViewModel，通过view对外暴露出公共属性，然后执行一些命令在向它请求一个动作。而反过来，ViewModel跟Model通讯，告诉它更新来响应UI。这样便使得为应用构建UI非常的容易。往一个应用程序上贴一个界面越容易.</p>
+<p>Model：很简单，就是业务逻辑相关的数据对象，通常从数据库映射而来，我们可以说是与数据库对应的model。</p>
+<p>View：也很简单，就是展现出来的用户界面。</p>
+<p>　给view里面的各种控件也定义一个对应的数据对象，这样，只要修改这个数据对象，view里面显示的内容就自动跟着刷新，而在view 里做了任何操作，这个数据对象也跟着自动更新，这样多美。所以：</p>
+<p>　　ViewModel：就是与界面(view)对应的Model。因为，数据库结构往往是不能直接跟界面控件一一对应上的，所以，需要再定义一个数据对象专门对应view上的控件。而ViewModel的职责就是把model对象封装成可以显示和接受输入的界面数据对象。</p>
+<p>　　至于viewmodel的数据随着view自动刷新，并且同步到model里去，这部分代码可以写成公用的框架，不用程序员自己操心了。</p>
+<p>　　简单的说，ViewModel就是View与Model的连接器，View与Model通过ViewModel实现双向绑定。</p>
+<p>MVVM模式和MVC模式一样，主要目的是分离视图（View）和模型（Model），有几大优点</p>
+<ol>
+<li>低耦合。视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。</li>
+<li>可重用性。你可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑。</li>
+<li>独立开发。开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计，使用Expression Blend可以很容易设计界面并生成xml代码。</li>
+<li>可测试。界面素来是比较难于测试的，而现在测试可以针对ViewModel来写。</li>
+</ol>
 
       
     </div>
@@ -333,6 +349,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/09/difficultInObject/" rel="prev" title="找个对象好难">
+                找个对象好难 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -400,7 +420,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

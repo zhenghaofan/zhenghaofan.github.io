@@ -229,6 +229,128 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/09/difficultInObject/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="billazheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello! I'm Ovan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/09/difficultInObject/" itemprop="url">找个对象好难</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-09T10:22:24+08:00">
+                2018-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近工作稳定下来了，年纪也算大了，同龄人已经有的孩子出生了，作为攻城狮的我还没认真找过对象😔</p>
+<p>怎么说呢，真的应该上大学找的，多少人想大学之后再在社会上找，但是难度还是增加了不少啊。首先，你工作的环境，妹纸多不多，多了你看不看得上，看得上了人家看不看得上你，看得上你了敢不敢找她们聊，聊了敢不敢加她们微信，加了敢不敢深入聊（问出是否单身等等）；当然呢也要看脸的，像现在坐在我旁边的就是一个长得超级漂亮的前端妹纸，可惜人家已经名花有主了。。。。。所以啊，很难遇到凑巧的既漂亮又跟你有缘分的。</p>
+<p>早知道大学时候就选修某个知名老师的课《恋爱心理学》，去上课的肯定是对这方面有需求，然后思想也比较开放的人，可惜我长在一个传统家庭，对于爱情观念在上大学时候几乎为零，所以呢根本没想过选修这门课。当然很难找对象啦。据说现在程序猿单身率40%左右，不知是不是可信，但是我觉得概率应该更高点吧</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/mvvm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -301,6 +423,22 @@
         
           
             <p>常见的MVVM框架有Vue,Angular…</p>
+<p>MVVM 就是将其中的View 的状态和行为抽象化，让我们将视图 UI 和业务逻辑分开。</p>
+<p>MVVM 模式便是使用的是数据绑定基础架构。它们可以轻松构建UI的必要元素。</p>
+<p>View绑定到ViewModel，通过view对外暴露出公共属性，然后执行一些命令在向它请求一个动作。而反过来，ViewModel跟Model通讯，告诉它更新来响应UI。这样便使得为应用构建UI非常的容易。往一个应用程序上贴一个界面越容易.</p>
+<p>Model：很简单，就是业务逻辑相关的数据对象，通常从数据库映射而来，我们可以说是与数据库对应的model。</p>
+<p>View：也很简单，就是展现出来的用户界面。</p>
+<p>　给view里面的各种控件也定义一个对应的数据对象，这样，只要修改这个数据对象，view里面显示的内容就自动跟着刷新，而在view 里做了任何操作，这个数据对象也跟着自动更新，这样多美。所以：</p>
+<p>　　ViewModel：就是与界面(view)对应的Model。因为，数据库结构往往是不能直接跟界面控件一一对应上的，所以，需要再定义一个数据对象专门对应view上的控件。而ViewModel的职责就是把model对象封装成可以显示和接受输入的界面数据对象。</p>
+<p>　　至于viewmodel的数据随着view自动刷新，并且同步到model里去，这部分代码可以写成公用的框架，不用程序员自己操心了。</p>
+<p>　　简单的说，ViewModel就是View与Model的连接器，View与Model通过ViewModel实现双向绑定。</p>
+<p>MVVM模式和MVC模式一样，主要目的是分离视图（View）和模型（Model），有几大优点</p>
+<ol>
+<li>低耦合。视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。</li>
+<li>可重用性。你可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑。</li>
+<li>独立开发。开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计，使用Expression Blend可以很容易设计界面并生成xml代码。</li>
+<li>可测试。界面素来是比较难于测试的，而现在测试可以针对ViewModel来写。</li>
+</ol>
 
           
         
@@ -514,7 +652,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
