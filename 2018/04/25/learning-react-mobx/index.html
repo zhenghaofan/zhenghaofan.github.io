@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="React,mobx," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hello! I&#39;m Ovan">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="最近项目中使用react+mobx+antd+create-react-app整套框架，在组件异步更新数据时想对数据进行重新定义的操作，发现一个问题，就是注入组件(inject(‘store’))Stroe中的数据发生改变时，并不会触发react生命周期中的componentWillReceiveProps的方法，代码如下：  1234567891011@inject(&amp;apos;servic">
+<meta name="keywords" content="React,mobx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用react-mobx时异步更新store的一个问题">
+<meta property="og:url" content="http://yoursite.com/2018/04/25/learning-react-mobx/index.html">
 <meta property="og:site_name" content="Hello! I&#39;m Ovan">
+<meta property="og:description" content="最近项目中使用react+mobx+antd+create-react-app整套框架，在组件异步更新数据时想对数据进行重新定义的操作，发现一个问题，就是注入组件(inject(‘store’))Stroe中的数据发生改变时，并不会触发react生命周期中的componentWillReceiveProps的方法，代码如下：  1234567891011@inject(&amp;apos;servic">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-25T07:38:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello! I&#39;m Ovan">
+<meta name="twitter:title" content="使用react-mobx时异步更新store的一个问题">
+<meta name="twitter:description" content="最近项目中使用react+mobx+antd+create-react-app整套框架，在组件异步更新数据时想对数据进行重新定义的操作，发现一个问题，就是注入组件(inject(‘store’))Stroe中的数据发生改变时，并不会触发react生命周期中的componentWillReceiveProps的方法，代码如下：  1234567891011@inject(&amp;apos;servic">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/25/learning-react-mobx/"/>
 
 
 
 
 
-  <title>Archive | Hello! I'm Ovan</title>
+  <title>使用react-mobx时异步更新store的一个问题 | Hello! I'm Ovan</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,407 +239,175 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/learning-react-mobx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="billazheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello! I'm Ovan">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">使用react-mobx时异步更新store的一个问题</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-25T15:17:50+08:00">
+                2018-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 10 posts in total. Keep on posting.
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/frontend/" itemprop="url" rel="index">
+                    <span itemprop="name">frontend</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/25/learning-react-mobx/" itemprop="url">
-              
-                <span itemprop="name">使用react-mobx时异步更新store的一个问题</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-25T15:17:50+08:00"
-              content="2018-04-25" >
-          04-25
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/12/typescript/" itemprop="url">
-              
-                <span itemprop="name">typescript使用文档</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-12T15:09:33+08:00"
-              content="2018-04-12" >
-          04-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/11/webpack-better-performance/" itemprop="url">
-              
-                <span itemprop="name">webpack构建性能优化</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-11T18:15:31+08:00"
-              content="2018-04-11" >
-          04-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>  最近项目中使用react+mobx+antd+create-react-app整套框架，在组件异步更新数据时想对数据进行重新定义的操作，发现一个问题，就是注入组件(inject(‘store’))Stroe中的数据发生改变时，并不会触发react生命周期中的componentWillReceiveProps的方法，代码如下：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@inject(&apos;service&apos;)</span><br><span class="line">@observer</span><br><span class="line">class Service extends React.Component&#123;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    this.props.service.getServices() //拉取数据</span><br><span class="line">  &#125;</span><br><span class="line">  //当this.props.service.services变化时, 不会触发以下方法：</span><br><span class="line">  componentWillReceiveProps() &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>   上网查了下，说是只有当props本身改变，即父级传入的数据发生改变时，componentWillReceiveProps才会触发，如果内嵌的属性像props.service.services发生改变时，并不会触发，因为mobx不是通过传入新的props去更新组件的，而是当任何已被观察的属性（observable）发生改变时，调用组件的forceUpdate方法去更新组件</p>
+<p>   参考链接 <a href="https://github.com/mobxjs/mobx-react/issues/281" target="_blank" rel="noopener">https://github.com/mobxjs/mobx-react/issues/281</a></p>
+<p>   解决方案可以重新定义一个computed变量，让其自动更新：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@computed get all_services() &#123;</span><br><span class="line">  return this.props.service.services</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/11/webpack-code-spliting/" itemprop="url">
-              
-                <span itemprop="name">webpack code spliting</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-11T12:03:31+08:00"
-              content="2018-04-11" >
-          04-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/09/asynchronous-Javascript/" itemprop="url">
-              
-                <span itemprop="name">Javascript 异步编程总结</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-09T15:43:38+08:00"
-              content="2018-04-09" >
-          04-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/09/think-in-jQuery/" itemprop="url">
-              
-                <span itemprop="name">think in jQuery</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-09T11:05:05+08:00"
-              content="2018-04-09" >
-          04-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/09/the-path-of-growth/" itemprop="url">
-              
-                <span itemprop="name">毕业后的成长之路</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-09T10:48:16+08:00"
-              content="2018-04-09" >
-          04-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/09/difficult-in-finding-object/" itemprop="url">
-              
-                <span itemprop="name">找个对象好难</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-09T10:22:24+08:00"
-              content="2018-04-09" >
-          04-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/08/mvvm/" itemprop="url">
-              
-                <span itemprop="name">MVVM框架原理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-08T15:46:29+08:00"
-              content="2018-04-08" >
-          04-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/08/my-vue/" itemprop="url">
-              
-                <span itemprop="name">试着实现一个Vue</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-08T15:43:28+08:00"
-              content="2018-04-08" >
-          04-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag"># React</a>
+          
+            <a href="/tags/mobx/" rel="tag"># mobx</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/12/typescript/" rel="next" title="typescript使用文档">
+                <i class="fa fa-chevron-left"></i> typescript使用文档
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -642,6 +415,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -856,6 +633,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
