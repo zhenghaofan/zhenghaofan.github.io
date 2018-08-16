@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="React," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hello! I&#39;m Ovan">
-<meta property="og:url" content="http://yoursite.com/tags/jQuery/index.html">
+<meta name="description" content="高阶组件HOC是用于重用组件的逻辑，它并不是React API的一部分，而是来自react的生态。简单来说，一个高阶组件就是一个函数，它接受一个组件作为输入，然后会返回一个新的组件作为结果，且所返回的新组件会进行相对增强。值得注意的是，我们在这说的组件并不是组件实例，而是一个组件类或者一个无状态组件的函数。  例子：定义一个过滤user属性的组件，传入一个组件  12345678910func">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react中的HOC">
+<meta property="og:url" content="http://yoursite.com/2018/04/26/react-hoc/index.html">
 <meta property="og:site_name" content="Hello! I&#39;m Ovan">
+<meta property="og:description" content="高阶组件HOC是用于重用组件的逻辑，它并不是React API的一部分，而是来自react的生态。简单来说，一个高阶组件就是一个函数，它接受一个组件作为输入，然后会返回一个新的组件作为结果，且所返回的新组件会进行相对增强。值得注意的是，我们在这说的组件并不是组件实例，而是一个组件类或者一个无状态组件的函数。  例子：定义一个过滤user属性的组件，传入一个组件  12345678910func">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-26T03:48:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello! I&#39;m Ovan">
+<meta name="twitter:title" content="react中的HOC">
+<meta name="twitter:description" content="高阶组件HOC是用于重用组件的逻辑，它并不是React API的一部分，而是来自react的生态。简单来说，一个高阶组件就是一个函数，它接受一个组件作为输入，然后会返回一个新的组件作为结果，且所返回的新组件会进行相对增强。值得注意的是，我们在这说的组件并不是组件实例，而是一个组件类或者一个无状态组件的函数。  例子：定义一个过滤user属性的组件，传入一个组件  12345678910func">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/jQuery/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/26/react-hoc/"/>
 
 
 
 
 
-  <title>Tag: jQuery | Hello! I'm Ovan</title>
+  <title>react中的HOC | Hello! I'm Ovan</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,54 +239,170 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>jQuery<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/react-hoc/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="billazheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello! I'm Ovan">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/04/09/think-in-jQuery/" itemprop="url">
-              
-                <span itemprop="name">think in jQuery</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">react中的HOC</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-09T11:05:05+08:00"
-              content="2018-04-09" >
-          04-09
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T11:43:42+08:00">
+                2018-04-26
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/frontend/" itemprop="url" rel="index">
+                    <span itemprop="name">frontend</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>  高阶组件HOC是用于重用组件的逻辑，它并不是React API的一部分，而是来自react的生态。简单来说，一个高阶组件就是一个函数，它接受一个组件作为输入，然后会返回一个新的组件作为结果，且所返回的新组件会进行相对增强。值得注意的是，我们在这说的组件并不是组件实例，而是一个组件类或者一个无状态组件的函数。<br>  例子：定义一个过滤user属性的组件，传入一个组件<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function removeUserProp(WrappedComponent) &#123;</span><br><span class="line">  //WrappingComponent这个组件名字并不重要，它至少一个局部变量，继承自React.Component</span><br><span class="line">  return class WrappingComponent extends React.Component &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">      // ES6的语法，可以将一个对象的特定字段过滤掉</span><br><span class="line">        const &#123;user, ...otherProps&#125; = this.props</span><br><span class="line">        return &lt;WrappedComponent &#123;...otherProps&#125; /&gt;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>  有了上面这个高阶组件的，当我们不希望某个组件接收到 user 时，我们就可以将这个组件作为参数传入 removeUserProp() 函数中，然后使用这个返回的组件就行了:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const NewComponent = removeUserProp(OldComponent)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag"># React</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/26/hoc-vs-renderProp/" rel="next" title="【译】React中的HOC VS RenderProp">
+                <i class="fa fa-chevron-left"></i> 【译】React中的HOC VS RenderProp
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -289,6 +410,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -503,6 +628,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -237,6 +237,295 @@
   <section id="posts" class="posts-expand">
     
       
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/react-hoc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="billazheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello! I'm Ovan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/26/react-hoc/" itemprop="url">react中的HOC</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T11:43:42+08:00">
+                2018-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/frontend/" itemprop="url" rel="index">
+                    <span itemprop="name">frontend</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>  高阶组件HOC是用于重用组件的逻辑，它并不是React API的一部分，而是来自react的生态。简单来说，一个高阶组件就是一个函数，它接受一个组件作为输入，然后会返回一个新的组件作为结果，且所返回的新组件会进行相对增强。值得注意的是，我们在这说的组件并不是组件实例，而是一个组件类或者一个无状态组件的函数。<br>  例子：定义一个过滤user属性的组件，传入一个组件<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function removeUserProp(WrappedComponent) &#123;</span><br><span class="line">  //WrappingComponent这个组件名字并不重要，它至少一个局部变量，继承自React.Component</span><br><span class="line">  return class WrappingComponent extends React.Component &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">      // ES6的语法，可以将一个对象的特定字段过滤掉</span><br><span class="line">        const &#123;user, ...otherProps&#125; = this.props</span><br><span class="line">        return &lt;WrappedComponent &#123;...otherProps&#125; /&gt;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>  有了上面这个高阶组件的，当我们不希望某个组件接收到 user 时，我们就可以将这个组件作为参数传入 removeUserProp() 函数中，然后使用这个返回的组件就行了:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const NewComponent = removeUserProp(OldComponent)</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/hoc-vs-renderProp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="billazheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello! I'm Ovan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/26/hoc-vs-renderProp/" itemprop="url">【译】React中的HOC VS RenderProp</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T11:40:53+08:00">
+                2018-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/frontend/" itemprop="url" rel="index">
+                    <span itemprop="name">frontend</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
 
   
 
@@ -381,8 +670,10 @@
   </article>
 
 
+      
     
       
+        
 
   
 
@@ -543,8 +834,10 @@
   </article>
 
 
+      
     
       
+        
 
   
 
@@ -688,8 +981,10 @@
   </article>
 
 
+      
     
       
+        
 
   
 
@@ -840,8 +1135,10 @@
   </article>
 
 
+      
     
       
+        
 
   
 
@@ -972,8 +1269,10 @@
   </article>
 
 
+      
     
       
+        
 
   
 
@@ -1122,608 +1421,19 @@
   </article>
 
 
+      
     
       
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/09/the-path-of-growth/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="billazheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello! I'm Ovan">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/09/the-path-of-growth/" itemprop="url">毕业后的成长之路</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-09T10:48:16+08:00">
-                2018-04-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">life</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>  我毕业后的成长之路可谓命运多舛，跳了好几家公司，跟我自身的状态有很大关系，不管是生理上还是心理上的<br>  有两家公司是因为加班过多，压力过大，导致身体出现问题而不得不选择离开<br>  而有一家公司给我的影响是最大的，应该说，是心理上的影响。那段时间也是过得最痛苦的时候，因为直属领导的种种行为招致我内心的不满，造成工作的时候内心感觉憋屈，每天带着精神负担去上班，所以工作得非常累。工作是对我心理承受能力的巨大考验。最后因为不想让自己陷入头痛的深渊无法自拔，选择离职。但其实这个过程中，大大提高了我的情商，也就是处理情绪的能力，对抗压力的能力，让我在各种无形的压力背后能让自己过得开心点。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
     
       
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/09/difficult-in-finding-object/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="billazheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello! I'm Ovan">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/09/difficult-in-finding-object/" itemprop="url">找个对象好难</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-09T10:22:24+08:00">
-                2018-04-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">life</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>最近工作稳定下来了，年纪也算大了，同龄人已经有的孩子出生了，作为攻城狮的我还没认真找过对象😔</p>
-<p>怎么说呢，真的应该上大学找的，多少人想大学之后再在社会上找，但是难度还是增加了不少啊。首先，你工作的环境，妹纸多不多，多了你看不看得上，看得上了人家看不看得上你，看得上你了敢不敢找她们聊，聊了敢不敢加她们微信，加了敢不敢深入聊（问出是否单身等等）；当然呢也要看脸的，像现在坐在我旁边的就是一个长得超级漂亮的前端妹纸，可惜人家已经名花有主了。。。。。所以啊，很难遇到凑巧的既漂亮又跟你有缘分的。</p>
-<p>早知道大学时候就选修某个知名老师的课《恋爱心理学》，去上课的肯定是对这方面有需求，然后思想也比较开放的人，可惜我长在一个传统家庭，对于爱情观念在上大学时候几乎为零，所以呢根本没想过选修这门课。当然很难找对象啦。据说现在程序猿单身率40%左右，不知是不是可信，但是我觉得概率应该更高点吧</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/mvvm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="billazheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello! I'm Ovan">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/08/mvvm/" itemprop="url">MVVM框架原理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-08T15:46:29+08:00">
-                2018-04-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/frontend/" itemprop="url" rel="index">
-                    <span itemprop="name">frontend</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>常见的MVVM框架有Vue,Angular…</p>
-<p>MVVM 就是将其中的View 的状态和行为抽象化，让我们将视图 UI 和业务逻辑分开。</p>
-<p>MVVM 模式便是使用的是数据绑定基础架构。它们可以轻松构建UI的必要元素。</p>
-<p>View绑定到ViewModel，通过view对外暴露出公共属性，然后执行一些命令在向它请求一个动作。而反过来，ViewModel跟Model通讯，告诉它更新来响应UI。这样便使得为应用构建UI非常的容易。往一个应用程序上贴一个界面越容易.</p>
-<p>Model：很简单，就是业务逻辑相关的数据对象，通常从数据库映射而来，我们可以说是与数据库对应的model。</p>
-<p>View：也很简单，就是展现出来的用户界面。</p>
-<p>　给view里面的各种控件也定义一个对应的数据对象，这样，只要修改这个数据对象，view里面显示的内容就自动跟着刷新，而在view 里做了任何操作，这个数据对象也跟着自动更新，这样多美。所以：</p>
-<p>　　ViewModel：就是与界面(view)对应的Model。因为，数据库结构往往是不能直接跟界面控件一一对应上的，所以，需要再定义一个数据对象专门对应view上的控件。而ViewModel的职责就是把model对象封装成可以显示和接受输入的界面数据对象。</p>
-<p>　　至于viewmodel的数据随着view自动刷新，并且同步到model里去，这部分代码可以写成公用的框架，不用程序员自己操心了。</p>
-<p>　　简单的说，ViewModel就是View与Model的连接器，View与Model通过ViewModel实现双向绑定。</p>
-<p>MVVM模式和MVC模式一样，主要目的是分离视图（View）和模型（Model），有几大优点</p>
-<ol>
-<li>低耦合。视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。</li>
-<li>可重用性。你可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑。</li>
-<li>独立开发。开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计，使用Expression Blend可以很容易设计界面并生成xml代码。</li>
-<li>可测试。界面素来是比较难于测试的，而现在测试可以针对ViewModel来写。</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/my-vue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="billazheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello! I'm Ovan">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/08/my-vue/" itemprop="url">试着实现一个Vue</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-08T15:43:28+08:00">
-                2018-04-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/frontend/" itemprop="url" rel="index">
-                    <span itemprop="name">frontend</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>接触Vue快一年了，也大致了解其中的相关原理，下面参考网上的一些资料，试着实现一个自己的VUE</p>
-<p>首先是视图，因为在大型应用中，为了控制数据的逻辑操作，数据与展现必须分离，不像JQuery，数据与展现牢牢绑定在一起，当你更新某一部分视图时，必须把数据和视图都重新更新一遍，但其实在大多数应用里，对数据的操作是最多的。<br>按照MV*框架的设计理念，视图是其中的View层，源代码是需要进行编译的模板，编译后是真正浏览器解析的代码，假设有如下模板：</p>
-<p><div>  </div><br>那么在script中我们是这样定义的：<br>var message = ‘I am Ovan’</p>
-<p>如何把模板渲染出来呢，很简单，一个正则就匹配出来了，但是这样只能渲染这一个变量，假设一个页面用了很多数据，那就要建很多message这种变量，一方面渲染效率就降低了，不能像直接设置innerHTML那样直接更新整个页面，另一方面这么多变量维护起来也不容易。我们可以把一个页面或一个component需要的数据放在一个对象里面，也就是：<br>var data = {<br>  message: ‘I am Ovan’<br>}<br>渲染的时候只渲染data.message</p>
-<p>但是怎么做到当data.message改变的时候，div里面的message也跟着改变呢（怎么实现MVVM）？<br>三种思路：<br>①发布者/订阅者模式：<br>当设置data.message的值时 -&gt; 发布了一个change事件，文档上进行监听，所有绑定data.message的元素进行数据变化的回调，即调用数据变化后的callback，类源代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">function DataBinder(object_id)&#123;</span><br><span class="line">    //创建一个简单地PubSub对象   </span><br><span class="line"></span><br><span class="line">    var pubSub = &#123;</span><br><span class="line">        callbacks: &#123;&#125;.</span><br><span class="line"></span><br><span class="line">        on: function(msg,calssback)&#123;</span><br><span class="line">            this.callbacks[msg] = this.callbacks[msg] || [];</span><br><span class="line">            this.callbacks[msg].push(callback);</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        publish: function(msg)&#123;</span><br><span class="line">            this.callbacks[msg] = this.callbacks[msg] || [];</span><br><span class="line">            for(var i = 0, len = this.callbacks[msg].length; i&lt;lenli++)&#123;</span><br><span class="line">                this.callbacks[msg][i].apply(this,arguments);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    data_attr = &quot;data-bind-&quot; + object_id,</span><br><span class="line">    message = object_id + &quot;:change&quot;,</span><br><span class="line"></span><br><span class="line">    changeHandler = function(evt)&#123;</span><br><span class="line">        var target = evt.target || evt.srcElemnt, //IE8兼容</span><br><span class="line">            prop_name = target.getAttribute(data_attr);</span><br><span class="line"></span><br><span class="line">            if(prop_name &amp;&amp; prop_name !== &quot;&quot;)&#123;</span><br><span class="line">                pubSub.publish(message,prop_name,target.value);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    //监听变化事件并代理到PubSub</span><br><span class="line">    if(document.addEventListener)&#123;</span><br><span class="line">        document.addEventListener(&quot;change&quot;,changeHandler,false);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        //IE8使用attachEvent而不是addEventListener     </span><br><span class="line">        document.attachEvent(&quot;onchange&quot;,changeHandler);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //PubSub将变化传播到所有绑定元素    </span><br><span class="line"></span><br><span class="line">    pubSub.on(message,function(vet,prop_name,new_val)&#123;</span><br><span class="line">        var elements = document.querySelectorAll(&quot;[&quot; + data_attr + &quot;=&quot; + prop_name + &quot;]&quot;),</span><br><span class="line">                tah_name;</span><br><span class="line"></span><br><span class="line">        for(var i = 0,len =elements.length; i &lt; len; i++)&#123;</span><br><span class="line">            tag_name = elements[i].tagName.toLowerCase();</span><br><span class="line"></span><br><span class="line">            if(tag_name === &quot;input&quot; || tag_name === &quot;textarea&quot; || tag_name === &quot;select&quot;)&#123;</span><br><span class="line">            elements[i].value = new_val;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                elements[i].innerHTML = new_val;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return pubSub;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>模型它需要通过调用一个自定义的PubSub的publish方法来实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//在model的设置器中   </span><br><span class="line"></span><br><span class="line">function User(uid)&#123;</span><br><span class="line">var binder = new DataBinder(uid);</span><br><span class="line"></span><br><span class="line">user = &#123;</span><br><span class="line">attributes: &#123;&#125;,</span><br><span class="line">set: function(attr_name,val)&#123;</span><br><span class="line">    this.attribute[attr_name] = val;</span><br><span class="line">    //使用“publish”方法  </span><br><span class="line">    binder.publish(uid+ &quot;:change&quot;, attr_name, val,this);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    get: function(attr_name) &#123;</span><br><span class="line">      return this.attribute[attr_name]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;        </span><br><span class="line"></span><br><span class="line">new user(&apos;aaa&apos;).set(&apos;message&apos;, &apos;I am Ovan&apos;)</span><br><span class="line">//&lt;input type=“text” data-bind-aaa=&quot;message&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
-<p>②脏值检查，监测变量是否发生变化，angular1.0的思路是当指定事件发生时进行检查，如DOM变化事件，XHR响应事件，Timer事件</p>
-<p>③数据劫持结合发布订阅者模式，劫持每个数据属性的setter,getter，当数据变动时，发布信息给订阅者，触发响应的回调</p>
-<p>vue利用浏览器拥有的Object.defineProperty()劫持属性。所以要模拟vue，需要实现以下几个方面的功能：<br>1.实现一个数据observer, 对数据对象的所有属性进行监听，有变动则发布消息给订阅者<br>2.编译模板，对每个元素绑定的数据进行解析<br>3.实现一个watcher，当收到通知时，执行指令绑定的响应回调函数</p>
-<p>简化版的Vue实现：</p>
-<p>html:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;h2 v-text=&quot;title&quot;&gt;&lt;/h2&gt;</span><br><span class="line">  &lt;p v-text=&quot;name&quot;&gt;&lt;/p&gt;</span><br><span class="line">  &lt;input v-model=&quot;name&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">function Vue(options) &#123;</span><br><span class="line">  //取出data</span><br><span class="line">  this.data = options.data || &#123;&#125;;</span><br><span class="line">  //取出渲染的容器元素</span><br><span class="line">  this.$el = document.querySelector(options.el) || document.body;</span><br><span class="line">  //取出text属性的元素</span><br><span class="line">  var textDOM = this.$el.querySelectorAll(&apos;[v-text]&apos;);</span><br><span class="line">  //取出model属性的元素</span><br><span class="line">  var modelDOM = this.$el.querySelectorAll(&apos;[v-model]&apos;);</span><br><span class="line"></span><br><span class="line">  var self = this;</span><br><span class="line">  observe(this.data);</span><br><span class="line">  textToNode();</span><br><span class="line">  watchModel();</span><br><span class="line"></span><br><span class="line">  function observe(data) &#123;</span><br><span class="line">    // 设置开始和递归终止条件</span><br><span class="line">    if (!data || typeof data !== &apos;object&apos;) &#123;</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line">    // 不能直接使用for循环，避开闭包陷阱</span><br><span class="line">    Object.keys(data).forEach(function (key) &#123;</span><br><span class="line">      defineReactive(data, key, data[key]);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function defineReactive(data, key, val) &#123;</span><br><span class="line">    observe(val);   // 递归对象属性到基本类型为止</span><br><span class="line">    Object.defineProperty(data, key, &#123;</span><br><span class="line">      enumerable  : true,    // 枚举</span><br><span class="line">      configurable: false, // 不可再配置</span><br><span class="line">      get         : function () &#123;</span><br><span class="line">        return val;</span><br><span class="line">      &#125;,</span><br><span class="line">      set         : function (newVal) &#123;</span><br><span class="line">        if (val === newVal) &#123;</span><br><span class="line">          return;</span><br><span class="line">        &#125;</span><br><span class="line">        val = newVal;  // setter本身已经做了赋值，val作为一个闭包变量，保存最新值</span><br><span class="line">        textToNode();</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function textToNode() &#123;</span><br><span class="line">    textDom.forEach(function (node) &#123;</span><br><span class="line">      node.innerText = self.data[node.getAttribute(&apos;v-text&apos;)];</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function watchModel()&#123;</span><br><span class="line">    modelDom.forEach(function (node) &#123;</span><br><span class="line">      node.addEventListener(&apos;keyup&apos;, function () &#123;</span><br><span class="line">        self.data[node.getAttribute(&apos;v-model&apos;)] = node.value;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">  el  : &apos;#app&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    name : &apos;Vue&apos;,</span><br><span class="line">    title: &apos;Hello Vue!&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
     
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1767,7 +1477,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

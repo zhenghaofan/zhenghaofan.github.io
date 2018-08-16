@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="MVVM,Vue," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,13 @@
 
 
 
-<meta name="description" content="接触Vue快一年了，也大致了解其中的相关原理，下面参考网上的一些资料，试着实现一个自己的VUE 首先是视图，因为在大型应用中，为了控制数据的逻辑操作，数据与展现必须分离，不像JQuery，数据与展现牢牢绑定在一起，当你更新某一部分视图时，必须把数据和视图都重新更新一遍，但其实在大多数应用里，对数据的操作是最多的。按照MV*框架的设计理念，视图是其中的View层，源代码是需要进行编译的模板，编译后是">
-<meta name="keywords" content="MVVM,Vue">
-<meta property="og:type" content="article">
-<meta property="og:title" content="试着实现一个Vue">
-<meta property="og:url" content="http://yoursite.com/2018/04/08/my-vue/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hello! I&#39;m Ovan">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Hello! I&#39;m Ovan">
-<meta property="og:description" content="接触Vue快一年了，也大致了解其中的相关原理，下面参考网上的一些资料，试着实现一个自己的VUE 首先是视图，因为在大型应用中，为了控制数据的逻辑操作，数据与展现必须分离，不像JQuery，数据与展现牢牢绑定在一起，当你更新某一部分视图时，必须把数据和视图都重新更新一遍，但其实在大多数应用里，对数据的操作是最多的。按照MV*框架的设计理念，视图是其中的View层，源代码是需要进行编译的模板，编译后是">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-11T09:32:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="试着实现一个Vue">
-<meta name="twitter:description" content="接触Vue快一年了，也大致了解其中的相关原理，下面参考网上的一些资料，试着实现一个自己的VUE 首先是视图，因为在大型应用中，为了控制数据的逻辑操作，数据与展现必须分离，不像JQuery，数据与展现牢牢绑定在一起，当你更新某一部分视图时，必须把数据和视图都重新更新一遍，但其实在大多数应用里，对数据的操作是最多的。按照MV*框架的设计理念，视图是其中的View层，源代码是需要进行编译的模板，编译后是">
+<meta name="twitter:title" content="Hello! I&#39;m Ovan">
 
 
 
@@ -120,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/08/my-vue/"/>
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
 
 
-  <title>试着实现一个Vue | Hello! I'm Ovan</title>
+  <title>Hello! I'm Ovan</title>
   
 
 
@@ -145,7 +140,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -238,9 +234,170 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/mvvm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="billazheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello! I'm Ovan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/08/mvvm/" itemprop="url">MVVM框架原理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-08T15:46:29+08:00">
+                2018-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/frontend/" itemprop="url" rel="index">
+                    <span itemprop="name">frontend</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>常见的MVVM框架有Vue,Angular…</p>
+<p>MVVM 就是将其中的View 的状态和行为抽象化，让我们将视图 UI 和业务逻辑分开。</p>
+<p>MVVM 模式便是使用的是数据绑定基础架构。它们可以轻松构建UI的必要元素。</p>
+<p>View绑定到ViewModel，通过view对外暴露出公共属性，然后执行一些命令在向它请求一个动作。而反过来，ViewModel跟Model通讯，告诉它更新来响应UI。这样便使得为应用构建UI非常的容易。往一个应用程序上贴一个界面越容易.</p>
+<p>Model：很简单，就是业务逻辑相关的数据对象，通常从数据库映射而来，我们可以说是与数据库对应的model。</p>
+<p>View：也很简单，就是展现出来的用户界面。</p>
+<p>　给view里面的各种控件也定义一个对应的数据对象，这样，只要修改这个数据对象，view里面显示的内容就自动跟着刷新，而在view 里做了任何操作，这个数据对象也跟着自动更新，这样多美。所以：</p>
+<p>　　ViewModel：就是与界面(view)对应的Model。因为，数据库结构往往是不能直接跟界面控件一一对应上的，所以，需要再定义一个数据对象专门对应view上的控件。而ViewModel的职责就是把model对象封装成可以显示和接受输入的界面数据对象。</p>
+<p>　　至于viewmodel的数据随着view自动刷新，并且同步到model里去，这部分代码可以写成公用的框架，不用程序员自己操心了。</p>
+<p>　　简单的说，ViewModel就是View与Model的连接器，View与Model通过ViewModel实现双向绑定。</p>
+<p>MVVM模式和MVC模式一样，主要目的是分离视图（View）和模型（Model），有几大优点</p>
+<ol>
+<li>低耦合。视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。</li>
+<li>可重用性。你可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑。</li>
+<li>独立开发。开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计，使用Expression Blend可以很容易设计界面并生成xml代码。</li>
+<li>可测试。界面素来是比较难于测试的，而现在测试可以针对ViewModel来写。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
 
   
 
@@ -270,7 +427,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">试着实现一个Vue</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/08/my-vue/" itemprop="url">试着实现一个Vue</a></h1>
         
 
         <div class="post-meta">
@@ -342,7 +501,9 @@
       
 
       
-        <p>接触Vue快一年了，也大致了解其中的相关原理，下面参考网上的一些资料，试着实现一个自己的VUE</p>
+        
+          
+            <p>接触Vue快一年了，也大致了解其中的相关原理，下面参考网上的一些资料，试着实现一个自己的VUE</p>
 <p>首先是视图，因为在大型应用中，为了控制数据的逻辑操作，数据与展现必须分离，不像JQuery，数据与展现牢牢绑定在一起，当你更新某一部分视图时，必须把数据和视图都重新更新一遍，但其实在大多数应用里，对数据的操作是最多的。<br>按照MV*框架的设计理念，视图是其中的View层，源代码是需要进行编译的模板，编译后是真正浏览器解析的代码，假设有如下模板：</p>
 <p><div>  </div><br>那么在script中我们是这样定义的：<br>var message = ‘I am Ovan’</p>
 <p>如何把模板渲染出来呢，很简单，一个正则就匹配出来了，但是这样只能渲染这一个变量，假设一个页面用了很多数据，那就要建很多message这种变量，一方面渲染效率就降低了，不能像直接设置innerHTML那样直接更新整个页面，另一方面这么多变量维护起来也不容易。我们可以把一个页面或一个component需要的数据放在一个对象里面，也就是：<br>var data = {<br>  message: ‘I am Ovan’<br>}<br>渲染的时候只渲染data.message</p>
@@ -356,6 +517,8 @@
 <p>html:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;h2 v-text=&quot;title&quot;&gt;&lt;/h2&gt;</span><br><span class="line">  &lt;p v-text=&quot;name&quot;&gt;&lt;/p&gt;</span><br><span class="line">  &lt;input v-model=&quot;name&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">function Vue(options) &#123;</span><br><span class="line">  //取出data</span><br><span class="line">  this.data = options.data || &#123;&#125;;</span><br><span class="line">  //取出渲染的容器元素</span><br><span class="line">  this.$el = document.querySelector(options.el) || document.body;</span><br><span class="line">  //取出text属性的元素</span><br><span class="line">  var textDOM = this.$el.querySelectorAll(&apos;[v-text]&apos;);</span><br><span class="line">  //取出model属性的元素</span><br><span class="line">  var modelDOM = this.$el.querySelectorAll(&apos;[v-model]&apos;);</span><br><span class="line"></span><br><span class="line">  var self = this;</span><br><span class="line">  observe(this.data);</span><br><span class="line">  textToNode();</span><br><span class="line">  watchModel();</span><br><span class="line"></span><br><span class="line">  function observe(data) &#123;</span><br><span class="line">    // 设置开始和递归终止条件</span><br><span class="line">    if (!data || typeof data !== &apos;object&apos;) &#123;</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line">    // 不能直接使用for循环，避开闭包陷阱</span><br><span class="line">    Object.keys(data).forEach(function (key) &#123;</span><br><span class="line">      defineReactive(data, key, data[key]);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function defineReactive(data, key, val) &#123;</span><br><span class="line">    observe(val);   // 递归对象属性到基本类型为止</span><br><span class="line">    Object.defineProperty(data, key, &#123;</span><br><span class="line">      enumerable  : true,    // 枚举</span><br><span class="line">      configurable: false, // 不可再配置</span><br><span class="line">      get         : function () &#123;</span><br><span class="line">        return val;</span><br><span class="line">      &#125;,</span><br><span class="line">      set         : function (newVal) &#123;</span><br><span class="line">        if (val === newVal) &#123;</span><br><span class="line">          return;</span><br><span class="line">        &#125;</span><br><span class="line">        val = newVal;  // setter本身已经做了赋值，val作为一个闭包变量，保存最新值</span><br><span class="line">        textToNode();</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function textToNode() &#123;</span><br><span class="line">    textDom.forEach(function (node) &#123;</span><br><span class="line">      node.innerText = self.data[node.getAttribute(&apos;v-text&apos;)];</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function watchModel()&#123;</span><br><span class="line">    modelDom.forEach(function (node) &#123;</span><br><span class="line">      node.addEventListener(&apos;keyup&apos;, function () &#123;</span><br><span class="line">        self.data[node.getAttribute(&apos;v-model&apos;)] = node.value;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">  el  : &apos;#app&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    name : &apos;Vue&apos;,</span><br><span class="line">    title: &apos;Hello Vue!&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
+          
+        
       
     </div>
     
@@ -370,38 +533,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/MVVM/" rel="tag"># MVVM</a>
-          
-            <a href="/tags/Vue/" rel="tag"># Vue</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/08/mvvm/" rel="prev" title="MVVM框架原理">
-                MVVM框架原理 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -411,11 +550,15 @@
   </article>
 
 
-
-    <div class="post-spread">
       
-    </div>
-  </div>
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -423,10 +566,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -641,10 +780,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
